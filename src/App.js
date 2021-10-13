@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from "@material-ui/core";
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-function App() {
+//components
+// import Header from "./components/header";
+// import Home from "./components/home/home";
+// import DetailView from "./components/post/detailView";
+// import CreateView from "./components/post/createView";
+// import UpdateView from "./components/post/updateView";
+import AppWithRouterAccess from "./AppWithRouterAccess";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <AppWithRouterAccess />
+      {/* <Header /> */}
+      {/* <Box style={{marginTop: 64}}>
+        <Switch>
+           <Route exact path="/" component={Home} />
+           <Route exact path="/details/:id" component={DetailView} />
+           <Route exact path="/create" component={CreateView}/>
+           <Route exact path="/update/:id" component={UpdateView}/>
+        </Switch>
+      </Box> */}
+    </BrowserRouter>
   );
 }
 
